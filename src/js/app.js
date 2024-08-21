@@ -37,6 +37,11 @@ function render(variables = {}) {
     variables.socialMediaPosition == "position-left"
       ? "position-left"
       : "position-right";
+  let twitter = variables.twitter == null ? "twitter" : variables.twitter;
+  let github = variables.github == null ? "github" : variables.github;
+  let linkedin = variables.linkedin == null ? "linkedin" : variables.linkedin;
+  let instagram =
+    variables.instagram == null ? "instagram" : variables.instagram;
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -46,10 +51,10 @@ function render(variables = {}) {
           <h2>${city} ${country}</h2>
           <h3>${role}</h3>
           <ul class=${socialMediaPosition}>
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/${twitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${github}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/school/${linkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
